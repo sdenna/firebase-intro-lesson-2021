@@ -15,11 +15,24 @@
                 <button onclick="signOut()" id = "signOutButton">Sign Out</button>
                 
         </div>
+        <br><br>
+        <div id = "studentDataDiv" style="display: none; background-color: aqua; padding: 20px">
+          <input id = "name" type = "text" placeholder="Name"/><br><br>
+          <input id="idNum" type = "text" placeholder="ID Num"/><br><br>
+          <input id = "age" type = "text" placeholder="Age"/><br><br>
+          <input id="year" type = "text" placeholder="Year in School or Job"/><br><br>
+          <br><br>
+          <button id="insert">Add Student Data</button>
+          <button id="showData">Show Data by Name or ID</button>
+          <button id="update">Update Existing Student Data</button>
+          <button id="delete">Delete Student by ID</button>
+
+        </div>
         <!-- Copy Firebase SDK info here-->
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
-       
+        <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
         <script>
             // Your web app's Firebase configuration
             var firebaseConfig = {
@@ -33,10 +46,10 @@
             // Initialize Firebase
             firebase.initializeApp(firebaseConfig);
             const auth = firebase.auth();
+            const db = firebase.firestore();
           </script>
 
-          
-
         <script src="scripts/auth.js"></script>
+        <script src="scripts/realtime.js"></script>
     </body>
 </html>

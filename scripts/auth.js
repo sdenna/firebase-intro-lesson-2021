@@ -1,3 +1,17 @@
+// This listens for changes in auth status and will do actions
+// accordingly.  
+
+auth.onAuthStateChanged(user => {
+    if (user) {
+        // get data if a valid user is logged in
+        hideShowStudentData(true);
+    }
+    else {
+        hideShowStudentData(false);
+    }
+})
+
+
 function signUp() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
@@ -22,6 +36,7 @@ function signIn() {
 
     auth.signInWithEmailAndPassword(email.value, password.value).then(() => {
         console.log("Signed in " + email.value);
+        hideShowStudentData(true);
     });
     //
     //promise.catch(e => console.log(e.message));
@@ -33,6 +48,7 @@ function signIn() {
 function signOut() {
     auth.signOut();
     console.log("Signed Out");
+    hideShowStudentData(false);
     // Any actions you want to do that they are signed out
 }
 

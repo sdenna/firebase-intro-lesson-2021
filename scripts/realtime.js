@@ -11,6 +11,15 @@ function ready() {
     yearV = document.getElementById('year').value;
 }
 
+function hideShowStudentData(loggedIn) {
+    var x = document.getElementById("studentDataDiv");
+    if (loggedIn) {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+
 // INSERT FUNCTIONALITY - ONCLICK
 
 document.getElementById('insert').onclick = () => {
