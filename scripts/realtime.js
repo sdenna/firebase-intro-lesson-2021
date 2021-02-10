@@ -20,6 +20,8 @@ function hideShowStudentData(loggedIn) {
     }
   }
 
+  
+
 // INSERT FUNCTIONALITY - ONCLICK
 
 document.getElementById('insert').onclick = () => {
@@ -52,7 +54,6 @@ document.getElementById('showData').onclick = () => {
     });
 
     db.collection('student').where("nameOfStudent", '==', nameV).get().then((snapshot) => {
-        console.log("testing " + snapshot.get(0).id + " " + snapshot.get(0).data().nameOfStudent);
         snapshot.forEach((doc) => {
             console.log(doc.id, " => ", doc.data());
             console.log(doc.data().idNum);
